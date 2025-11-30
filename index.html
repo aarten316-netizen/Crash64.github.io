@@ -1,0 +1,72 @@
+<section id="pricing" class="pricing">
+    <h2>Подписка VURIX</h2>
+    <div class="pricing-cards">
+        <div class="price-card">
+            <h3>1 Неделя</h3>
+            <p class="price">500 RUB</p>
+            <ul>
+                <li>Все функции чита</li>
+                <li>Поддержка 24/7</li>
+                <li>Авто-обновления</li>
+            </ul>
+            <button class="smooth-btn buy-btn" data-plan="week">Купить через QMoney</button>
+        </div>
+        
+        <div class="price-card featured">
+            <h3>1 Месяц</h3>
+            <p class="price">1500 RUB</p>
+            <ul>
+                <li>Все функции чита</li>
+                <li>Приоритетная поддержка</li>
+                <li>Эксклюзивные функции</li>
+                <li>Авто-обновления</li>
+            </ul>
+            <button class="smooth-btn buy-btn primary" data-plan="month">Купить через QMoney</button>
+        </div>
+        
+        <div class="price-card">
+            <h3>Навсегда</h3>
+            <p class="price">5000 RUB</p>
+            <ul>
+                <li>Пожизненный доступ</li>
+                <li>Все будущие обновления</li>
+                <li>MAX приоритет поддержка</li>
+                <li>Персональный конфиг</li>
+            </ul>
+            <button class="smooth-btn buy-btn" data-plan="lifetime">Купить через QMoney</button>
+        </div>
+    </div>
+</section>
+
+<!-- Модальное окно оплаты -->
+<div id="qmoneyModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Оплата через QMoney</h3>
+        <div class="qmoney-instructions">
+            <p>Для оплаты отправьте точную сумму на QMoney хеш:</p>
+            <div class="qmoney-hash">
+                <code id="qmoneyHash">5D4AA0D01B38481BBE961C666756CAEBC13A0ECCAC823BF06DFE872C03B1C6C3</code>
+                <button class="copy-btn" onclick="copyQmoneyHash()">Копировать</button>
+            </div>
+            <p class="amount-info">Сумма: <span id="paymentAmount">1500</span> RUB</p>
+            <div class="payment-steps">
+                <h4>Инструкция:</h4>
+                <ol>
+                    <li>Откройте QMoney приложение</li>
+                    <li>Введите хеш получателя</li>
+                    <li>Отправьте точную сумму</li>
+                    <li>Сохраните транзакцию хеш</li>
+                    <li>Введите хеш транзакции ниже:</li>
+                </ol>
+            </div>
+            <div class="transaction-input">
+                <input type="text" id="transactionHash" placeholder="Хеш вашей транзакции...">
+                <button onclick="verifyPayment()">Подтвердить оплату</button>
+            </div>
+            <div class="timer">
+                <p>Время на оплату: <span id="paymentTimer">15:00</span></p>
+            </div>
+        </div>
+    </div>
+</div>
